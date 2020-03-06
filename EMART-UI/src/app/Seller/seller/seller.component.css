@@ -1,0 +1,73 @@
+
+   Sidebar links 
+   .sidebar a {
+    font-size: 17px;
+    display: block;
+    color: rgb(172, 107, 10);
+    padding: 20px;
+    text-decoration: none;
+  } 
+/*Active/current link */
+  .sidebar a.active {
+    background-color: rgb(13, 14, 13);
+    color:  #d88c1b;
+  } 
+  
+  /* Links on mouse-over */
+   .sidebar a:hover:not(.active) {
+    background-color: rgb(12, 11, 11);
+    color: white;
+  } 
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+ div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  } 
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+   @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+   
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+   @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    } 
+   } 
+  /* .hero-image {
+    background-image: url("E:\FinalProject-Jagadeswari-845162\EMART-UI\src\assets\image\buyer.jpg");
+    background-color: #cccccc;
+    height: 800px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size:30;
+    position:relative;
+  }
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

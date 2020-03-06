@@ -1,0 +1,100 @@
+<p>register-buyer works!</p>
+
+
+<div class="card m-3">
+    <h5 class="card-header">Buyer Registration Form</h5>
+     <div class="card-body"> 
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      
+                <div class="form-group ">
+                    <label> Buyer ID</label>
+                    <input type="text" formControlName="BuyerId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BuyerId.errors }" />
+                    <div *ngIf="submitted && f.BuyerId.errors" class="invalid-feedback">
+                        <div *ngIf="f.BuyerId.errors.required">ID is required</div>
+                        <div *ngIf="f.BuyerId.errors.pattern">Enter only numbers</div>
+                
+                    </div>
+                </div>
+
+           
+                <div class="form-group ">
+                    <label> UserName</label>
+                    <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
+                    <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
+                        <div *ngIf="f.UserName.errors.required"> Name is required</div>
+                        <div *ngIf="f.UserName.errors.pattern">Enter only uppercase</div>
+                    </div>
+                </div>
+     
+        
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="Password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+                    <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                        <div *ngIf="f.Password.errors.required">Password is required</div>
+                        <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group ">
+                    <label>Mobile number</label>
+                    <input type="text" formControlName="MobileNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.MobileNo.errors }" />
+                    <div *ngIf="submitted && f.MobileNo.errors" class="invalid-feedback">
+                        <div *ngIf="f.MobileNo.errors.required">Mobile no is required</div>
+                        <div *ngIf="f.MobileNo.errors.pattern">Mobile no Must be Valid</div>
+                    </div>
+                </div> 
+          
+                <div class="form-group ">
+                    <label>Email ID</label>
+                    <input type="text" formControlName="EmailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.EmailId.errors }" />
+                    <div *ngIf="submitted && f.EmailId.errors" class="invalid-feedback">
+                        <div *ngIf="f.EmailId.errors.required">Email is required</div>
+                        <div *ngIf="f.EmailId.errors.pattern">Email Must be Valid</div>
+                    </div>
+                </div> 
+          
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" >Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div> 
+ <!-- <h3>Table</h3> 
+
+<div class="container">
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th> UserName</th>
+        <th> Password</th>
+        <th> companyname</th> 
+        <th> GSTIN</th>
+        <th> briefaboutcompany</th>
+        <th> postal_address</th>
+        <th>website</th>
+        <th>contactnumber</th>
+        <th>Emailid</th>
+    </tr>
+    
+            <tr *ngFor="let li of item">
+            <td>{{li.id}}</td>
+            <td>{{li.UserName}}</td>
+            <td>{{li. Password}}</td>
+            <td>{{li.companyname}}</td>
+            <td>{{li.GSTIN}}</td>
+            <td>{{li.briefaboutcompany}}</td>
+            <td>{{li.postal_address}}</td>
+            <td>{{li.website}}</td>
+            <td>{{li.emailid}}</td>
+            <td>{{li.contactnumber}}</td>
+           
+            
+    </tr>
+</table>
+</div>
+
+ -->
+ <router-outlet></router-outlet>

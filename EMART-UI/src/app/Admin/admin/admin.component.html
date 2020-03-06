@@ -1,0 +1,32 @@
+
+<div class="topnav">
+
+     
+    <a [routerLink]="['/admin/add-category']"  id="r" >Add Category</a>
+    <a [routerLink]="['/admin/add-subcategory']"id="r" >Add Subcategory</a>
+
+    
+     <a [routerLink]="['/admin/viewcategories']" id="r">View Categories</a>
+     <a [routerLink]="['/admin/viewsubcategories']" id="r" >View Subcategoies</a>
+ 
+     
+
+</div>
+
+
+
+<div class="row">
+
+<br>
+<br>
+
+</div>
+<div class="row">
+<div class="col-lg-1">
+
+
+</div>
+<div class="col-lg-11">
+<router-outlet></router-outlet>
+</div>
+</div>

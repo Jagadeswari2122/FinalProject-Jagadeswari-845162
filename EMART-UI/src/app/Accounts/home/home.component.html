@@ -1,0 +1,39 @@
+<div class="b1">
+    
+    <div class="topnav">
+       <a> <div class="round-shape" id="i1"> <img class="round-shape" src="src/assets/image/df.jpg" /> </div></a>
+        
+       <a [routerLink]="['/home/login']"  id="r" ><i class="fa fa-fw fa-user"></i>Login</a>
+       <a [routerLink]="['/home/registerbuyer']"id="r" ><i class="fa fa-fw fa-user"></i>SignIn</a>
+  
+       
+        <a [routerLink]="['/home']" id="r"><i class="fa fa-fw fa-phone"></i>Contact</a>
+        <a [routerLink]="['/home']" id="r" ><i class="fa fa-fw fa-user"></i>About Us</a>
+        <a class="active"  [routerLink]="['/home']" id="r"><i class="fa fa-fw fa-home" ></i>Home</a>
+        
+  
+  </div>
+  
+  <div class="row">
+    <br>
+    <br>
+  </div>
+  
+  <div class="container-fluid">
+        
+  
+  <div class="row">
+    <div class="col-lg-8">
+       
+      </div>
+    
+
+  <div class="col-lg-2">
+      
+  <router-outlet></router-outlet>  
+    </div>  
+  
+  
+  </div>
+  </div>
+  </div>
