@@ -16,6 +16,10 @@ namespace Emart.BuyerService.Repositories
         List<Category> GetCategories();
         List<SubCategory> GetSubCategories(string categoryid);
 
+        void Addtocart(Cart cartobj);
 
+        void Deletefromcart(string cartid);
+
+        List<Cart> ViewCart();
     }
 }

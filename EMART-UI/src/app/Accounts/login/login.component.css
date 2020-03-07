@@ -89,14 +89,23 @@
 
 
 
-
-
+ input {
+ 
+  border-radius: 50px;
+  width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box;
+}
 
  
 /*assign full width inputs*/ 
-  
+/*   
 input[type=text], 
 input[type=password] { 
+   border:solid 1px #ddd;
     width: 100%; 
     padding: 12px 20px; 
     margin: 8px 0; 
@@ -105,8 +114,8 @@ input[type=password] {
     box-sizing: border-box;
     size: 20px; 
 
-    border-radius: 50px;
-} 
+    border-radius: 50px; 
+} */ 
 /*set a style for the buttons*/ 
   
 button { 
@@ -172,7 +181,7 @@ span
 }
 .jumbotron{
   width : 350px;
-  background-image: url("https://getflywheel.com/wp-content/uploads/2015/08/free-blurred-backgrounds.jpg");
+  background-image: url("https://media.gettyimages.com/photos/closeup-of-wooden-plank-with-christmas-trees-in-background-during-picture-id908808044?s=2048x2048");
   position:relative;
   background-size: cover;
   
@@ -182,4 +191,22 @@ h4{
  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: black;
 }
+/* 
+.inner-addon { 
+  position: relative; 
+} */
 
+/* style icon */
+/* .inner-addon .glyphicon {
+position: absolute;
+padding: 10px;
+pointer-events: none;
+} */
+
+/* align icon */
+/* .left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;} */
+
+/* add padding  */
+/* .left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; } */

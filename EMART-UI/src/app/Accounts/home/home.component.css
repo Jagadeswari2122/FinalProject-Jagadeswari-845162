@@ -2,7 +2,7 @@
 
 .topnav {
   overflow: hidden;
-   background-color:black;/*topnav color  */
+   background-color:transparent;/*topnav color  */
   padding: 10px 20px;
   width:100%;
 }
@@ -10,17 +10,18 @@
 .topnav a {
   float: left;
   display: block;
-  color:rgb(228, 11, 138);;/*topnav text colour */
+  color:black;/*topnav text colour */
   text-align: center;
   padding: 10px 14px;
-  text-decoration: none;
-  font-size: 17px;
+  text-decoration-style:none;
+  /* font-style:bold; */
+  font-size: 20px;
 }
-
+/* 
 .topnav a:hover {
   background-color:white;/*cursor color */
-  color:black;
-}
+  /* color:black;
+} */ */
 
 
 
@@ -181,7 +182,7 @@ h4{
 }
 
 .b1{
- background-image: url("https://downloader.la/temp/5e6237c59b7eb.png");  
+ background-image: url("https://downloader.la/temp/5e6389eadc324.png");  
  /* backgroundimGE */
  background-size: cover;
  background-attachment: fixed;

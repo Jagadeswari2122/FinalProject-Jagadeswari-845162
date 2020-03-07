@@ -4,6 +4,7 @@ import{Observable} from "Rxjs";
 import { Buyer } from '../Models/buyer';
 import { Items } from '../Models/items';
 import { Transactionhistory } from '../Models/transactionhistory';
+import { Cart } from '../Models/cart';
 
 const Requestheaders={headers:new HttpHeaders({'content-Type':'application/json','Authorization': 'Bearer '+localStorage.getItem('token')})}
 @Injectable({
@@ -51,6 +52,21 @@ export class BuyerService {
   {
     return this.http.get<any>(this.url+'GetSubCategories',Requestheaders);
   }
+  public ViewCart() :Observable<Cart>
+  {
+    return this.http.get<Cart>(this.url+'ViewCart',Requestheaders);
+   }
+
+   public Addtocart(cartobj:Cart) :Observable<Cart>
+  {
+    return this.http.post<Cart>(this.url+'Addtocart',cartobj,Requestheaders);
+   }
+
+   public Deletefromcart(cartid:string) :Observable<Cart>
+  {
+    return this.http.delete<Cart>(this.url+'Deletefromcart/'+cartid,Requestheaders);
+   }
+
 }
 
 
