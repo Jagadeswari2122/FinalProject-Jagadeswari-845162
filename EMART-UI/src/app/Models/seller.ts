@@ -1,13 +1,13 @@
 export class Seller {
-                public SellerId:string;
-                public UserName:string;
-                public Password:string;
-                public CompanyName:string;
-                public GSTIN:string;
-                public BriefDetails:string;
-                public PostalAddress:string;
-                public Website:string;
-                public EmailId:string;
-                public MobileNo:string;
+                public sellerId:string;
+                public userName:string;
+                public password:string;
+                public companyName:string;
+                public  gstin:string;
+                public briefDetails:string;
+                public postalAddress:string;
+                public website:string;
+                public emailId:string;
+                public mobileNo:string;
 
 }

@@ -4,6 +4,7 @@ import { Items } from '../Models/items';
 import { Observable } from 'rxjs';
 import { Category } from '../Models/category';
 import { Subcategory } from '../Models/subcategory';
+import { Seller } from '../Models/seller';
 
 const Requestheaders={headers:new HttpHeaders({'content-Type':'application/json',})}
 @Injectable({
@@ -11,6 +12,7 @@ const Requestheaders={headers:new HttpHeaders({'content-Type':'application/json'
 })
 export class SellerService {
   url:string='http://localhost:51586/Item/'
+  url1:string='http://localhost:51586/Seller/'
   constructor(private http:HttpClient) { }
   public AddItem(item:Items):Observable<any>
   {
@@ -46,6 +48,9 @@ public GetItem(id:string) : Observable<Items>
   return this.http.get<Items>(this.url+'GetItem/'+id,Requestheaders)
 }
 
-
+public ViewProfile(id:string) : Observable<any>
+{
+  return this.http.get<any>(this.url1+'GetProfile/'+id,Requestheaders)
+}
 
 }

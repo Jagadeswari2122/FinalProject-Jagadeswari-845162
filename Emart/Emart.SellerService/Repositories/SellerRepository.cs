@@ -9,17 +9,17 @@ namespace Emart.SellerService.Repositories
     public class SellerRepository:ISellerRepository
     {
         private readonly EmartDBContext _context;
-        private Emart.SellerService.Models.EmartDBContext emartDBContext;
+       /// private Emart.SellerService.Models.EmartDBContext emartDBContext;
 
         public SellerRepository(EmartDBContext context)
         {
             _context = context;
         }
 
-        public SellerRepository(Emart.SellerService.Models.EmartDBContext emartDBContext)
-        {
-            this.emartDBContext = emartDBContext;
-        }
+        //public SellerRepository(Emart.SellerService.Models.EmartDBContext emartDBContext)
+        //{
+        //    this.emartDBContext = emartDBContext;
+        //}
 
         public void EditProfile(Seller obj)
         {
@@ -27,8 +27,7 @@ namespace Emart.SellerService.Repositories
             _context.SaveChanges();
         }
 
-       
-
+    
         public Seller GetProfile(string sid)
         {
             return _context.Seller.Find(sid);

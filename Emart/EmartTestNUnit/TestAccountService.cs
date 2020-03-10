@@ -40,11 +40,11 @@ namespace EmartTestNUnit
         {
             _accrepo.BuyerRegister(new Buyer()
             {
-                BuyerId = "5",
-                UserName = "Latha",
-                Password = "latha",
-                EmailId = "latha@gmail.com",
-                MobileNo = "9183086775",
+                BuyerId = "2",
+                UserName = "Lalli",
+                Password = "lalli",
+                EmailId = "latha21@gmail.com",
+                MobileNo = "9183086666",
                 CreatedDateTime = DateTime.Now
             });
 
@@ -58,16 +58,16 @@ namespace EmartTestNUnit
         {
             _accrepo.SellerRegister(new Seller()
             {
-                SellerId = "6",
-                UserName = "Rani",
-                Password = "rani",
-                EmailId = "ranii@gmail.com",
-                MobileNo = "9666643876",
-                CompanyName = "Vamsi Civils",
-                Gstin = "A789",
-                BriefDetails = "Good Products",
-                Website = "VamsiGoods.com",
-                PostalAddress = "Guntur"
+                SellerId = "5",
+                UserName = "Roja",
+                Password = "roja",
+                EmailId = "roja@gmail.com",
+                MobileNo = "9666643999",
+                CompanyName = "Roja Works",
+                Gstin = "A453",
+                BriefDetails = "Fine Crafts",
+                Website = "Finecrafts.com",
+                PostalAddress = "Mumbai"
             });
 
             var result = _accrepo.SellerLogin("Rani", "rani");

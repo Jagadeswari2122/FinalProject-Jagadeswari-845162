@@ -80,16 +80,16 @@ MobileNo:string;
 {
 
       this.seller=new Seller();
-      this.seller.SellerId=this.regForm.value["SellerId"];
-      this.seller.UserName=this.regForm.value["UserName"];
-      this.seller.Password=this.regForm.value["Password"];
-      this.seller.CompanyName=this.regForm.value["CompanyName"];
-      this.seller.GSTIN=this.regForm.value["GSTIN"];
-      this.seller.BriefDetails=this.regForm.value["BriefDetails"];
-      this.seller.PostalAddress=this.regForm.value["PostalAddress"];
-      this.seller.Website=this.regForm.value["Website"];
-      this.seller.MobileNo=this.regForm.value["MobileNo"];
-      this.seller.EmailId=this.regForm.value["EmailId"];
+      this.seller.sellerId=this.regForm.value["SellerId"];
+      this.seller.userName=this.regForm.value["UserName"];
+      this.seller.password=this.regForm.value["Password"];
+      this.seller.companyName=this.regForm.value["CompanyName"];
+      this.seller.gstin=this.regForm.value["GSTIN"];
+      this.seller.briefDetails=this.regForm.value["BriefDetails"];
+      this.seller.postalAddress=this.regForm.value["PostalAddress"];
+      this.seller.website=this.regForm.value["Website"];
+      this.seller.mobileNo=this.regForm.value["MobileNo"];
+      this.seller.emailId=this.regForm.value["EmailId"];
       this.service.SellerRegister(this.seller).subscribe
       (
         res=>

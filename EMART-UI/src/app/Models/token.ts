@@ -3,5 +3,5 @@ export class Token {
     sellerId : string;
     buyerId :string;
     token :string ;
-   msg : string ;  
+    msg : string ;  
 }

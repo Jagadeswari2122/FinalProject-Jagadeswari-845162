@@ -24,9 +24,9 @@ namespace EmartTestNUnit
             {
                 _adminrepo.AddCategories(new Category()
                 {
-                    CategoryId = "4",
-                    CategoryName = "Electronics",
-                    BriefDetails = "high Quality"
+                    CategoryId = "3",
+                    CategoryName = "Kitchen product",
+                    BriefDetails = "Fine Quality"
                 });
 
                 var result = _adminrepo.GetCatById("2");
@@ -39,14 +39,14 @@ namespace EmartTestNUnit
             {
                 _adminrepo.AddSubCategories(new SubCategory()
                 {
-                    SubcategoryId = "SC1",
-                    SubcategoryName = "TV",
-                    CategoryId = "2",
-                    BriefDetails = "Sony",
-                    Gst = "A456"
+                    SubcategoryId = "SC3",
+                    SubcategoryName = "fridge",
+                    CategoryId = "3",
+                    BriefDetails = "kenstar",
+                    Gst = "A341"
                 });
 
-                var result = _adminrepo.GetSubCatById("SC1");
+                var result = _adminrepo.GetSubCatById("SC3");
                 Assert.IsNotNull(result);
             }
 
@@ -111,9 +111,9 @@ namespace EmartTestNUnit
             [Description("Test DeleteSubCategories()")]
             public void TestDeleteSubCategories()
             {
-                _adminrepo.DeleteSubCategories("SC3");
+                _adminrepo.DeleteSubCategories("SC38");
 
-                var result = _adminrepo.GetSubCatById("SC3");
+                var result = _adminrepo.GetSubCatById("SC38");
                 Assert.IsNull(result);
             }
 
