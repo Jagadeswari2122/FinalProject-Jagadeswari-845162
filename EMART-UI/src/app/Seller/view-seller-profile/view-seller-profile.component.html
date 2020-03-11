@@ -1,4 +1,5 @@
 
+
 <div class='bold-line'></div>
 <div class='window'>
   <div class='overlay'></div>
@@ -7,7 +8,7 @@
     <form [formGroup]="itemForm">
       <div class="input-fields">
         <label>ID</label>
-        <input type="text" formControlName="sellerId" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.sellerId.errors }" />
+        <input type="text" formControlName="sellerId" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.sellerId.errors }" readonly />
           
           <label>NAME</label>
           <input type="text" formControlName="userName" placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
@@ -40,9 +41,11 @@
         <br><br>
       <div class="text-center">
         <!-- <button class="ghost-round full-width " id=b1>View</button> -->
-        <!-- <button class="ghost-round full-width" type="button" (click)="EditProfile()">EditProfile</button> -->
-        <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
+        <button class="ghost-round full-width" type="button" (click)="EditProfile()">EditProfile</button>
+       
       </div>
     </form>
   </div>
 </div>
+
+

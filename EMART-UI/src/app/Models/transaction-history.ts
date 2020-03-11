@@ -1,4 +1,4 @@
-export class Transactionhistory {
+export class TransactionHistory {
     id:string;
      buyerId:string;
       sellerId:string;

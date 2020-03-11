@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Items } from 'src/app/Models/items';
 import { BuyerService } from 'src/app/Services/buyer.service';
-import { Transactionhistory } from 'src/app/Models/transactionhistory';
 import { Router } from '@angular/router';
+import { TransactionHistory } from 'src/app/Models/transaction-history';
 @Component({
   selector: 'app-buy-product',
   templateUrl: './buy-product.component.html',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BuyProductComponent implements OnInit {
   transForm:FormGroup;
-  transactionhistory:Transactionhistory;
+  transactionhistory:TransactionHistory;
   itemlist:Items[];
   item:Items
  
@@ -36,7 +36,7 @@ export class BuyProductComponent implements OnInit {
 
   onSubmit()
 {
-  this.transactionhistory=new Transactionhistory();
+  this.transactionhistory=new TransactionHistory();
   this.transactionhistory.id='I'+Math.round(Math.random()*999);
   this.transactionhistory.transactionId='T'+Math.round(Math.random()*999);
   this.transactionhistory.buyerId=localStorage.getItem('buyerid');

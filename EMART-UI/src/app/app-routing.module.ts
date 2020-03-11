@@ -65,7 +65,7 @@ const routes: Routes = [
       {path:'register-buyer',component:RegisterBuyerComponent},
       
       ]}, 
-
+      {path:'',component:HomeComponent}
    ];
 
 @NgModule({

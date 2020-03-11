@@ -13,23 +13,21 @@ export class ViewSellerProfileComponent implements OnInit {
 
   itemForm:FormGroup;
   submitted=false;
-  seller:Seller;
-  sellerlist:Seller[];
+seller:Seller;
+ sellerlist:Seller[];
   constructor(private fromBuilder:FormBuilder,private service: SellerService) {
-    let sid= localStorage.getItem('sellerId')
-    console.log(sid);
-    this.service.ViewProfile("1").subscribe(res=>
-    {
-      console.log(res);
+    let sid= localStorage.getItem('sellerid')
+ this.service.ViewProfile(sid).subscribe(res=>
+  {
     this.seller=res;
     console.log("get");
-      console.log(this.seller);
+    console.log(this.seller);
     console.log('Id Found');
     //console.log(res);
     this.itemForm.patchValue(
       {
        
-      sellerId:sid,
+      sellerId:localStorage.getItem('sellerid'),
       userName:this.seller.userName,
         password:this.seller.password,
       companyName:this.seller.companyName,
@@ -38,7 +36,8 @@ export class ViewSellerProfileComponent implements OnInit {
         postalAddress:this.seller.postalAddress,
         website:this.seller.website,
         emailId:this.seller.emailId,
-        mobileNo:this.seller.mobileNo   
+        mobileNo:this.seller.mobileNo
+        
       }
     )
   },
@@ -83,4 +82,33 @@ onReset()
 this.submitted=false;
 this.itemForm.reset();
 }
+
+
+
+
+
+
+EditProfile()
+{
+  this.seller=new Seller();
+  console.log(this.seller);
+  this.seller.sellerId=localStorage.getItem('sellerid');
+  this.seller.userName=this.itemForm.value["userName"];
+  this.seller.password=this.itemForm.value["password"];
+  this.seller.emailId=this.itemForm.value["emailId"];
+  this.seller.mobileNo=this.itemForm.value["mobileNo"];
+  this.seller.companyName=this.itemForm.value["companyName"];
+  this.seller.gstin=this.itemForm.value["gstin"];
+  this.seller.briefDetails=this.itemForm.value["briefDetails"];
+  this.seller.postalAddress=this.itemForm.value["postalAddress"];
+  this.seller.website=this.itemForm.value["website"];
+// this.item.createdDateTime=this.itemForm.value["createdDateTime"];
+
+  console.log(this.seller);
+  this.service.EditProfile(this.seller).subscribe(res=>
+    {
+      console.log('Record Updated');
+    })
+}
+
 }

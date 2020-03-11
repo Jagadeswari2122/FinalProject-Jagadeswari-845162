@@ -29,7 +29,7 @@ public ViewItems():Observable<Items[]>
     return this.http.get<Category[]>(this.url+'GetCategories',Requestheaders);
   }
   
-  public GetSubCategories( catid:string):Observable<Subcategory[]>
+  public GetSubCategories(catid:string):Observable<Subcategory[]>
   {
     return this.http.get<Subcategory[]>(this.url+'GetSubCategories/'+catid);
   }
@@ -51,6 +51,10 @@ public GetItem(id:string) : Observable<Items>
 public ViewProfile(id:string) : Observable<any>
 {
   return this.http.get<any>(this.url1+'GetProfile/'+id,Requestheaders)
+}
+public EditProfile(seller:Seller):Observable<any>
+{
+  return this.http.put<any>(this.url1+'EditProfile',JSON.stringify(seller),Requestheaders);
 }
 
 }
