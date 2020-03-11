@@ -71,12 +71,12 @@ export class RegisterBuyerComponent implements OnInit {
   Register()
   {
     this.buyer=new Buyer();
-    this.buyer.BuyerId=this.regForm.value["BuyerId"];
-    this.buyer.UserName=this.regForm.value["UserName"];
-    this.buyer.Password=this.regForm.value["Password"];
-    this.buyer.MobileNo=this.regForm.value["MobileNo"];
-    this.buyer.EmailId=this.regForm.value["EmailId"];
-   this.buyer.CreatedDateTime=new Date();
+    this.buyer.buyerId=this.regForm.value["BuyerId"];
+    this.buyer.userName=this.regForm.value["UserName"];
+    this.buyer.password=this.regForm.value["Password"];
+    this.buyer.mobileNo=this.regForm.value["MobileNo"];
+    this.buyer.emailId=this.regForm.value["EmailId"];
+   this.buyer.createdDateTime=new Date();
 
    
     this.service.BuyerRegister(this.buyer).subscribe
