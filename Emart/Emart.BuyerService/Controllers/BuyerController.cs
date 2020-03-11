@@ -70,20 +70,20 @@ namespace Emart.BuyerService.Controllers
             }
         }
 
+
         [HttpGet]
-        [Route("GetProfile/{bid}")]
-        public IActionResult GetProfile(string bid)
+        [Route("ViewProfile/{bid}")]
+
+        public IActionResult ViewProfile(string bid)
         {
             try
             {
-                _ibuyrepo.GetProfile(bid);
-                return Ok();
-
+                return Ok(_ibuyrepo.ViewProfile(bid));
             }
 
             catch (Exception ex)
             {
-                return NotFound(ex.InnerException.Message);
+                return NotFound(ex.Message);
             }
         }
 
@@ -168,21 +168,19 @@ namespace Emart.BuyerService.Controllers
                 return NotFound(ex.InnerException.Message);
             }
         }
-
         [HttpGet]
-        [Route("ViewCart")]
-        public IActionResult ViewCart()
+        [Route("ViewCart/{bid}")]
+        public IActionResult ViewCart(string bid)
         {
             try
             {
 
-                return Ok(_ibuyrepo.ViewCart());
+                return Ok(_ibuyrepo.ViewCart(bid));
             }
             catch (Exception ex)
             {
                 return NotFound(ex.InnerException.Message);
             }
         }
-
     }
 }

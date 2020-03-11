@@ -1,26 +1,29 @@
 
-
  <div class="topnav">
-        <a class="active"  [routerLink]="['/home']"><i class="fa fa-fw fa-home"></i>Home</a>
-        <a [routerLink]="['./view-buyer-profile']"><i class="fa fa-fw fa-user"></i>ViewProfile</a>
-        <a [routerLink]="['/home']"><i class="fa fa-fw fa-phone"></i>Contact</a>
-         <a [routerLink]="['./search']" id="l" ><i class="fa fa-fw fa-user"></i>Search</a> 
-        
-  <a (click)="Logout()" id="r" >LogOut</a>
+  
+        <a [routerLink]="['/buyer']"><span class="glyphicon glyphicon-home"></span>Home</a>
+        <a [routerLink]="['./view-buyer-profile']"><span class="glyphicon glyphicon-user"></span>ViewProfile</a>
+       
+     
+         <a [routerLink]="['./purchase-history']" ><span class="glyphicon glyphicon-time"> </span>TransactionHistory </a>
+         <a [routerLink]="['./view-cart']"><span class="glyphicon glyphicon-sunglasses"> </span>  ViewCart</a>
+         <a (click)="Logout()" id="r" ><span class="glyphicon glyphicon-user"> </span> LogOut</a>
+         <a [routerLink]="['./search']" id="r" ><span class="glyphicon glyphicon-search"></span>Search</a>      
+
       </div> 
      
 
-      <div class="sidenav">
+      <!-- <div class="sidenav">
         <a [routerLink]="['./buy-product']" ><span class="glyphicon glyphicon-shopping-cart"></span> BuyProduct</a>
-        <a [routerLink]="['./purchase-history']" ><span class="glyphicon glyphicon-time"> </span>  PurchaseHistory </a>
-        <a [routerLink]="['./view-cart']"><span class="glyphicon glyphicon-sunglasses"> </span>  ViewCart</a>
+      
    
-    </div>
+    </div> -->
 
 
 
 
  
+
 <div class="container-fluid">
       
 

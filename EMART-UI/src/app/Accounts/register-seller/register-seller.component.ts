@@ -32,16 +32,16 @@ MobileNo:string;
 
   ngOnInit() {
     this.regForm=this.fromBuilder.group({
-      SellerId:['',[Validators.required,Validators.pattern("^[E]?[0-9]{1,4}$")]],
-      UserName:['',[Validators.required,Validators.pattern("^[A-Za-z]{4,10}$")]],
-      Password:['',Validators.required],
-      CompanyName:['',Validators.required],
-      GSTIN:['',Validators.required],
-      BriefDetails:['',Validators.required],
-      PostalAddress:['',Validators.required],
-      Website:['',Validators.required],
-      MobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
-      EmailId:['',[Validators.required,Validators.email]],
+      sellerId:['',[Validators.required,Validators.pattern("^[E]?[0-9]{1,4}$")]],
+      userName:['',[Validators.required,Validators.pattern("^[A-Za-z]{4,10}$")]],
+      password:['',Validators.required],
+      companyName:['',Validators.required],
+      gstin:['',Validators.required],
+      briefDetails:['',Validators.required],
+      postalAddress:['',Validators.required],
+      website:['',Validators.required],
+      mobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
+      emailId:['',[Validators.required,Validators.email]],
     
    });
     
@@ -80,16 +80,16 @@ MobileNo:string;
 {
 
       this.seller=new Seller();
-      this.seller.sellerId=this.regForm.value["SellerId"];
-      this.seller.userName=this.regForm.value["UserName"];
-      this.seller.password=this.regForm.value["Password"];
-      this.seller.companyName=this.regForm.value["CompanyName"];
-      this.seller.gstin=this.regForm.value["GSTIN"];
-      this.seller.briefDetails=this.regForm.value["BriefDetails"];
-      this.seller.postalAddress=this.regForm.value["PostalAddress"];
-      this.seller.website=this.regForm.value["Website"];
-      this.seller.mobileNo=this.regForm.value["MobileNo"];
-      this.seller.emailId=this.regForm.value["EmailId"];
+      this.seller.sellerId=this.regForm.value["sellerId"];
+      this.seller.userName=this.regForm.value["userName"];
+      this.seller.password=this.regForm.value["password"];
+      this.seller.companyName=this.regForm.value["companyName"];
+      this.seller.gstin=this.regForm.value["gstin"];
+      this.seller.briefDetails=this.regForm.value["briefDetails"];
+      this.seller.postalAddress=this.regForm.value["postalAddress"];
+      this.seller.website=this.regForm.value["website"];
+      this.seller.mobileNo=this.regForm.value["mobileNo"];
+      this.seller.emailId=this.regForm.value["emailId"];
       this.service.SellerRegister(this.seller).subscribe
       (
         res=>

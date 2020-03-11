@@ -1,5 +1,6 @@
 export class Cart {
     cartId:string;
+    buyerId:string;
     itemId:string;
     categoryId:string;
     subcategoryId:string;

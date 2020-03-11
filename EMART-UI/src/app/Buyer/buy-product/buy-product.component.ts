@@ -19,6 +19,9 @@ export class BuyProductComponent implements OnInit {
   this.buyerform=this.formbuilder.group({
     transactionType:[''],
     cardNumber:[''],
+    itemName:[''],
+    image:[''],
+    price:[''],
     cvv:[''],
     edate:[''],
     name:[''],
@@ -39,9 +42,12 @@ export class BuyProductComponent implements OnInit {
     this.pobj.sellerId=this.item.sellerId;
     this.pobj.numberOfItems=this.buyerform.value["numberOfItems"];
     this.pobj.itemId=this.item.itemId;
+    
     this.pobj.transactionType=this.buyerform.value["transactionType"]
        this.pobj.dateTime=this.buyerform.value["dateTime"];
-       this.pobj.remarks=this.buyerform.value["remarks"];
+      
+this.pobj.image=this.buyerform.value["image"];
+this.pobj.price=this.buyerform.value["price"];
        console.log(this.pobj);
        this.service.BuyItem(this.pobj).subscribe(res=>{
          console.log("Purchase was Sucessfull");

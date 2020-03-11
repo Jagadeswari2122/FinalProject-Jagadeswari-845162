@@ -48,9 +48,9 @@ public GetItem(id:string) : Observable<Items>
   return this.http.get<Items>(this.url+'GetItem/'+id,Requestheaders)
 }
 
-public ViewProfile(id:string) : Observable<any>
+public ViewProfile(id:string) : Observable<Seller>
 {
-  return this.http.get<any>(this.url1+'GetProfile/'+id,Requestheaders)
+  return this.http.get<Seller>(this.url1+'ViewProfile/'+id,Requestheaders)
 }
 public EditProfile(seller:Seller):Observable<any>
 {

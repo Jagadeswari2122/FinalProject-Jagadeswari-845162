@@ -26,10 +26,10 @@ body {
   color: black;
 }
 
-.topnav a.active {
+/* .topnav a.active {
   background-color: #2196F3;
   color: white;
-}
+} */
 
 .topnav .search-container {
   float: right;

@@ -36,20 +36,20 @@ namespace Emart.SellerService.Controllers
             }
         }
 
+
         [HttpGet]
-        [Route("GetProfile/{sid}")]
-        public IActionResult GetProfile(string sid)
+        [Route("ViewProfile/{sid}")]
+        public IActionResult ViewProfile(string sid)
         {
             try
             {
-                _isellrepo.GetProfile(sid);
-                return Ok();
+
+                return Ok(_isellrepo.ViewProfile(sid));
             }
 
             catch (Exception ex)
             {
-                return NotFound(ex.InnerException.Message);
-
+                return NotFound(ex.Message);
             }
         }
 

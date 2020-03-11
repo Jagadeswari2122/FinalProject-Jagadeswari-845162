@@ -21,7 +21,7 @@ namespace EmartTestNUnit
         {
             _buyrepo.BuyItem(new TransactionHistory()
             {
-                Id="1",
+             
       
                 BuyerId="1",
       
@@ -35,7 +35,7 @@ namespace EmartTestNUnit
       
                 DateTime=DateTime.Now,
       
-                Remarks="good",
+           
       
                TransactionType="debit"
               
@@ -111,7 +111,7 @@ namespace EmartTestNUnit
                 Itemname = "necklace",
                 Price = "8888",
                 Description = "necklace set",
-                Remarks = "good",
+              
                 Image = "jewellary.jpg"
             });
         }

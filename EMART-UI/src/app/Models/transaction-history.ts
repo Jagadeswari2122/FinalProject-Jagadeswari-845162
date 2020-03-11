@@ -4,6 +4,10 @@ export class TransactionHistory {
       sellerId:string;
       transactionId:string;
       itemId:string;
+
+      itemName:string;
+      image:string;
+       price:string;
       numberOfItems:string;
       dateTime:Date;
       remarks:string;

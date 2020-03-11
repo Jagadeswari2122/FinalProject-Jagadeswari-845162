@@ -31,10 +31,11 @@ namespace Emart.BuyerService.Repositories
             return _context.Category.ToList();
         }
 
-        public Buyer GetProfile(string bid)
+        public Buyer ViewProfile(string bid)
         {
             return _context.Buyer.Find(bid);
         }
+
 
         public List<SubCategory> GetSubCategories(string categoryid)
         {
@@ -44,6 +45,11 @@ namespace Emart.BuyerService.Repositories
         public List<Items> SearchItems(string name)
         {
             return _context.Items.Where(res => res.ItemName == name).ToList();
+        }
+
+        public List<Cart> ViewCart(string bid)
+        {
+            return _context.Cart.Where(res => res.BuyerId == bid).ToList();
         }
 
         public List<TransactionHistory> TransactionHistory(string bid)
@@ -63,10 +69,6 @@ namespace Emart.BuyerService.Repositories
             _context.SaveChanges();
         }
 
-        public List<Cart> ViewCart()
-        {
-            return _context.Cart.ToList();
-        }
     }
     
     

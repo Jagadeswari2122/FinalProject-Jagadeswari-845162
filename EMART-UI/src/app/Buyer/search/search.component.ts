@@ -49,6 +49,8 @@ export class SearchComponent implements OnInit {
   {
   this.cartobj=new Cart();
   this.cartobj.cartId='CT'+Math.round(Math.random()*999);
+
+  this.cartobj.buyerId=localStorage.getItem('buyerId');
   this.cartobj.sellerId=item.sellerId;
   this.cartobj.categoryId=item.categoryId;
   this.cartobj.subcategoryId=item.subcategoryId;

@@ -11,7 +11,8 @@ namespace Emart.BuyerService.Repositories
         List<Items> SearchItems(string name);
         void BuyItem(TransactionHistory item);
         void EditProfile(Buyer bobj);
-        Buyer GetProfile(string bid);
+
+        Buyer ViewProfile(string bid);
         List<TransactionHistory> TransactionHistory(string bid);
         List<Category> GetCategories();
         List<SubCategory> GetSubCategories(string categoryid);
@@ -19,7 +20,8 @@ namespace Emart.BuyerService.Repositories
         void Addtocart(Cart cartobj);
 
         void Deletefromcart(string cartid);
+        List<Cart> ViewCart(string bid);
 
-        List<Cart> ViewCart();
+
     }
 }

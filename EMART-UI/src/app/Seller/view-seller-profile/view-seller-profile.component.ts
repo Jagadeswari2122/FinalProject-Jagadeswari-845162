@@ -11,12 +11,14 @@ import { SellerService } from 'src/app/services/seller.service';
 })
 export class ViewSellerProfileComponent implements OnInit {
 
+ 
   itemForm:FormGroup;
   submitted=false;
 seller:Seller;
  sellerlist:Seller[];
   constructor(private fromBuilder:FormBuilder,private service: SellerService) {
-    let sid= localStorage.getItem('sellerid')
+    let sid= localStorage.getItem('sellerId')
+    console.log(sid);
  this.service.ViewProfile(sid).subscribe(res=>
   {
     this.seller=res;
@@ -27,7 +29,7 @@ seller:Seller;
     this.itemForm.patchValue(
       {
        
-      sellerId:localStorage.getItem('sellerid'),
+      sellerId:localStorage.getItem('sellerId'),
       userName:this.seller.userName,
         password:this.seller.password,
       companyName:this.seller.companyName,

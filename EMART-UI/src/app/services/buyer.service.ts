@@ -30,12 +30,12 @@ export class BuyerService {
   
   public EditProfile(buyer:Buyer):Observable<any>
   {
-    return this.http.post<any>(this.url+'EditProfile',Requestheaders);
+    return this.http.post<any>(this.url+'EditProfile/',Requestheaders);
   }
-  public GetProfile(id:string):Observable<any>
-  {
-    return this.http.get<any>(this.url+'GetProfile/',Requestheaders);
-  }
+  public ViewProfile(id:string) : Observable<Buyer>
+   {
+     return this.http.get<Buyer>(this.url+'ViewProfile/'+id,Requestheaders)
+   }
 
   public TransactionHistory(tid:string):Observable<any>
   {

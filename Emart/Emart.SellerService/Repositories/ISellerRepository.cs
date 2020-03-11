@@ -11,8 +11,10 @@ namespace Emart.SellerService.Repositories
     {
        
         void EditProfile(Seller obj);
-       
-        Seller GetProfile(string sid);
-        
+
+        Seller ViewProfile(string sid);
+
+    
+
     }
 }

@@ -27,13 +27,12 @@ namespace Emart.SellerService.Repositories
             _context.SaveChanges();
         }
 
-    
-        public Seller GetProfile(string sid)
+
+        public Seller ViewProfile(string sid)
         {
             return _context.Seller.Find(sid);
-
         }
 
-       
+
     }
 }
