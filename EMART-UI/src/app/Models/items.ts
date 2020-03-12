@@ -5,8 +5,9 @@ export class Items {
                     public subcategoryId:string;
                     public price:string;
                     public itemName:string;
+                    public image:string;
                     public description:string;
                     public stockNumber:string;
                     public remarks:string;
-                      public image:string;
+                     
 }

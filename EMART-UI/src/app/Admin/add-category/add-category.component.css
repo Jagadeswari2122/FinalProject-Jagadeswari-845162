@@ -1,6 +1,22 @@
+
 .jumbotron{
-    width : 400px;
+  width : 300px;
+  background-image: url("src\assets\image\pinkbg.jpg");
   float:center;
-    position: relative;;
-    background-size: cover;
+  position:relative;
+  background-size: cover;
+  
 }
+
+/* 
+button { 
+  background-color:green; 
+  color: white; 
+  size: 15px; 
+  padding: 8px 12px; 
+  margin: 8px 0; 
+  border: none; 
+  cursor: pointer; 
+  width: 70%; 
+  /* border-radius: 30px;
+}  */

@@ -1,6 +1,10 @@
+
 .jumbotron{
-    width : 400px;
+  width : 350px;
+  background-image: url("src\assets\image\pinkbg.jpg");
   float:center;
-    position: relative;;
-    background-size: cover;
+  position:relative;
+  background-size: cover;
+ 
+  
 }

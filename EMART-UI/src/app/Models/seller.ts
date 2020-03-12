@@ -4,6 +4,7 @@ export class Seller {
                 public password:string;
                 public companyName:string;
                 public  gstin:string;
+             
                 public briefDetails:string;
                 public postalAddress:string;
                 public website:string;

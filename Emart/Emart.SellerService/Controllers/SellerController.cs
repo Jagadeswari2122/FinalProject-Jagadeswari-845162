@@ -20,7 +20,7 @@ namespace Emart.SellerService.Controllers
             _isellrepo = sellrepo;
         }
         [HttpPost]
-        [Route("EditProfile/{obj}")]
+        [Route("EditProfile")]
         public IActionResult EditProfile(Seller obj)
         {
             try

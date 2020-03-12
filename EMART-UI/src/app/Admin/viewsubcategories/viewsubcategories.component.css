@@ -20,3 +20,15 @@ td {
     position: relative;;
     background-size: cover;
 } */
+
+
+.container{
+    width : 350px;
+    background-image: url("src\assets\image\pinkbg.jpg");
+    float:center;
+    position:relative;
+    background-size: cover;
+   
+    
+  }
+  

@@ -1,16 +1,16 @@
-
+<div class="b1">
 <div class="topnav">
 
      
-    <a [routerLink]="['/admin/add-category']"  id="r" >Add Category</a>
-    <a [routerLink]="['/admin/add-subcategory']"id="r" >Add Subcategory</a>
+    <a [routerLink]="['/admin/add-category']"  class="font-weight-bold" >Add Category</a>
+    <a [routerLink]="['/admin/add-subcategory']" class="font-weight-bold">Add Subcategory</a>
 
     
-     <a [routerLink]="['/admin/viewcategories']" id="r">View Categories</a>
-     <a [routerLink]="['/admin/viewsubcategories']" id="r" >View Subcategoies</a>
- 
+     <a [routerLink]="['/admin/viewcategories']" class="font-weight-bold">View Categories</a>
+     <a [routerLink]="['/admin/viewsubcategories']" class="font-weight-bold" >View Subcategoies</a>
+     <a (click)="Logout()"  class="font-weight-bold">LogOut</a>
      
-     <button (click)="Logout()" id="r" >LogOut</button>
+     <!-- <button (click)="Logout()" >LogOut</button> -->
  
 </div>
 
@@ -29,5 +29,6 @@
 </div>
 <div class="col-lg-11">
 <router-outlet></router-outlet>
+</div>
 </div>
 </div>

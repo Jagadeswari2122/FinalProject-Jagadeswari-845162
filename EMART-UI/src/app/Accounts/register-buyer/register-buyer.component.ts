@@ -9,88 +9,76 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./register-buyer.component.css']
 })
 export class RegisterBuyerComponent implements OnInit {
-  regForm:FormGroup;
+  registerForm:FormGroup;
   submitted=false;
   buyer:Buyer;
   buyerlist:Buyer[];
+  constructor(private fromBuilder:FormBuilder,private service: AccountService) { }
 
 
-  BuyerId:string;
-   UserName:string;
-  Password:string;
-  EmailId:string
-   MobileNo:string;
-  CreatedDateTime:Date;
 
-  constructor(private fromBuilder:FormBuilder,private service:AccountService) { }
-
+  
   ngOnInit() {
-    this.regForm=this.fromBuilder.group({
-      BuyerId:['',[Validators.required,Validators.pattern("^[E]?[0-9]{1,4}$")]],
-      UserName:['',[Validators.required,Validators.pattern("^[a-zA-Z]{4,10}$")]],
-      Password:['',[Validators.required]],
-     MobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
-     EmailId:['',[Validators.required,Validators.email]]
+    this.registerForm=this.fromBuilder.group({
      
+      // BuyerId:['',[Validators.required,Validators.maxLength(5)]],
+      UserName:['',[Validators.required,Validators.pattern('^[a-zA-Z][0-9]{3,15}$')]],
+      MobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
+      EmailId:['',[Validators.required,Validators.email]],
+      Password:['',[Validators.required,Validators.minLength(6)]],
+
     
-   });
-    
+    });
   }
 
 
+  get f()
+  {
+    return this.registerForm.controls;
 
-
-
-
-
-
-
+  }
+  
   onSubmit()
   {
     this.submitted=true;
     //display from values on sucess
-    if(this.regForm.valid)
+    if(this.registerForm.valid)
     {
-      alert('sucess!!!!!!')
-      console.log(JSON.stringify(this.regForm.value));
+      // alert('sucess!!!!!!')
+      this.Register();
+      console.log(JSON.stringify(this.registerForm.value));
     }
-    this.Register();
+    
   }
-   get f()
-  {
-    return this.regForm.controls;
-
-  }
-  onReset()
-  {
+    onReset()
+    {
 
     this.submitted=false;
-    this.regForm.reset();
+    this.registerForm.reset();
+    }
+
+    Register()
+    {
+
+      this.buyer=new Buyer();
+      this.buyer.buyerId='B'+Math.floor(Math.random()*1000);
+      this.buyer.userName=this.registerForm.value["UserName"];
+      this.buyer.mobileNo=(this.registerForm.value["MobileNo"]);
+      this.buyer.password=this.registerForm.value["Password"];
+      this.buyer.emailId=this.registerForm.value["EmailId"];
+      this.buyer.createdDateTime=new Date();
+      this.service.BuyerRegister(this.buyer).subscribe 
+      (
+        res=>
+        {
+          console.log('Record Added');
+          alert("Details Registered");
+        },
+        err=>
+        {
+          console.log(err);
+        }
+      )
+    }
+  
   }
-
-  Register()
-  {
-    this.buyer=new Buyer();
-    this.buyer.buyerId=this.regForm.value["BuyerId"];
-    this.buyer.userName=this.regForm.value["UserName"];
-    this.buyer.password=this.regForm.value["Password"];
-    this.buyer.mobileNo=this.regForm.value["MobileNo"];
-    this.buyer.emailId=this.regForm.value["EmailId"];
-   this.buyer.createdDateTime=new Date();
-
-   
-    this.service.BuyerRegister(this.buyer).subscribe
-    (
-      res=>
-      {
-        console.log('Record Added');
-      },
-      err=>
-      {
-        console.log(err);
-      }
-    )
-}
-}
-
-

@@ -54,7 +54,7 @@ namespace Emart.BuyerService.Controllers
         }
 
         [HttpPut]
-        [Route("EditProfile/{bobj}")]
+        [Route("EditProfile")]
         public IActionResult EditProfile(Buyer bobj)
         {
             try

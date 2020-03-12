@@ -16,23 +16,23 @@ export class RegisterSellerComponent implements OnInit {
 sellerlist:Seller[];
 
  
- SellerId:string;
- UserName:string;
- Password:string;
- CompanyName:string;
- GSTIN:string;
- BriefDetails:string;
- PostalAddress:string;
- Website:string;
- EmailId:string;
-MobileNo:string;
+ sellerId:string;
+ userName:string;
+ password:string;
+ companyName:string;
+gstin:string;
+ briefDetails:string;
+ postalAddress:string;
+ website:string;
+ emailId:string;
+mobileNo:string;
   
 
   constructor(private fromBuilder:FormBuilder,private service:AccountService) { }
 
   ngOnInit() {
     this.regForm=this.fromBuilder.group({
-      sellerId:['',[Validators.required,Validators.pattern("^[E]?[0-9]{1,4}$")]],
+      sellerId:[''],
       userName:['',[Validators.required,Validators.pattern("^[A-Za-z]{4,10}$")]],
       password:['',Validators.required],
       companyName:['',Validators.required],
@@ -55,6 +55,7 @@ MobileNo:string;
     {
       alert('success!!!!!!')
       console.log(JSON.stringify(this.regForm.value));
+      this.Register();
     }
   }
    get f()
@@ -80,7 +81,7 @@ MobileNo:string;
 {
 
       this.seller=new Seller();
-      this.seller.sellerId=this.regForm.value["sellerId"];
+      this.seller.sellerId='S'+Math.floor(Math.random()*100);
       this.seller.userName=this.regForm.value["userName"];
       this.seller.password=this.regForm.value["password"];
       this.seller.companyName=this.regForm.value["companyName"];

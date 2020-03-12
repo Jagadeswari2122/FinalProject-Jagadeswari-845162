@@ -50,9 +50,50 @@ namespace Emart.AccountService.Controllers
             );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        [HttpPost]
+        [Route("BuyerRegister")]
+        public IActionResult Post(Buyer item)
+        {
+            try
+            {
+                _iacrepo.BuyerRegister(item);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.InnerException.Message);
+
+            }
+
+        }
 
 
-        [HttpGet]
+
+        [HttpPost]
+        [Route("SellerRegister")]
+        public IActionResult Post(Seller item)
+        {
+            try
+            {
+                _iacrepo.SellerRegister(item);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+
+            }
+
+        }
+
+
+
+
+
+
+   
+
+    [HttpGet]
         [Route("BuyerLogin/{uname}/{pwd}")]
 
         public IActionResult BuyerLogin(string uname, string pwd)

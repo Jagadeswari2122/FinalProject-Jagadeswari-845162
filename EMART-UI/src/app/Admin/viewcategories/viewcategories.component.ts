@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/Models/category';
 import { AdminService } from 'src/app/services/admin.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewcategories',
@@ -11,12 +12,14 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./viewcategories.component.css']
 })
 export class ViewcategoriesComponent implements OnInit {
+  
   viewcatForm:FormGroup;
   viewcatList:Category[];
   category: Category;
   
-  constructor(private formbuilder:FormBuilder,private service:AdminService) { 
-   
+  constructor(private formbuilder:FormBuilder,private service:AdminService,private route:Router) { 
+    
+        
   }
 
   View()
@@ -25,12 +28,10 @@ export class ViewcategoriesComponent implements OnInit {
       {
         this.viewcatList=res;
         console.log(this.viewcatList)
-      
       },
       err=>{
         console.log(err);
       })
-        
   }
   
 
@@ -56,14 +57,15 @@ export class ViewcategoriesComponent implements OnInit {
         res=>
         {
           this.category=res;
-        console.log("get");
+          console.log("get");
           console.log(this.category);
           console.log('Id Found');
           this.viewcatForm.setValue(
             {
               CategoryId:this.category.categoryId,
               CategoryName:this.category.categoryName,
-              BriefDetails:this.category.briefDetails  
+              BriefDetails:this.category.briefDetails,
+              
             }
           )
         },
@@ -87,7 +89,10 @@ export class ViewcategoriesComponent implements OnInit {
     this.service.EditCategories(catobj).subscribe(res=>{
         this.category=res;
         console.log(this.category);
-      
+        alert("Record Updated");
+        this.route.navigateByUrl('/admin/view-categories');
+        this.View();
+         
   })
   
     }
@@ -100,14 +105,18 @@ export class ViewcategoriesComponent implements OnInit {
     res=>
     {
       console.log('Record Deleted');
+      alert("Are you Sure? ");
+      alert("Record Deleted");
+      this.route.navigateByUrl('/admin/view-categories');
+    
     },
     err=>
     {
       console.log(err);
     }
   )
-  this.View();
+  this.View(); 
 }
     }
-    
-  
+
+

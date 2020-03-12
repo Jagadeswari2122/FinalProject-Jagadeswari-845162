@@ -1,33 +1,36 @@
-<div class='bold-line'></div>
-<div class='window'>
-  <div class='overlay'></div>
-  <div class='content'>
-    <div class='welcome'>View Profile</div>
-    <form [formGroup]="itemForm">
-      <div class="input-fields">
-        <label>Buyer Id</label>
-        <input type="text" formControlName="buyerId" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.buyerId.errors }" />
-          
-          <label>Name</label>
-          <input type="text" formControlName="userName" placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
-          
-        <label>Password</label>
-        <input type="password" formControlName="password" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
-          
-        <label>Email</label>
-          <input type="text" formControlName="emailId" placeholder="Enter Email" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
-         
-          <label>Mobile</label>
-          <input type="text" formControlName="mobileNo" placeholder="Enter Mobile Number" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
-          
-        
-        </div>
-        <br><br>
-      <div class="text-center">
-        <!-- <button class="ghost-round full-width " id=b1>View</button> -->
-        <button class="ghost-round full-width" type="button" (click)="EditProfile()">EditProfile</button>
-   
-      </div>
-    </form>
+<div class="col-lg-1">
+  <br>
+  <br>
   </div>
-</div>
+  
+      <div class="col-lg-6">
+      <div class="jumbotron " id="b1">
+    
+      <form [formGroup]="itemForm">
+        <div class="input-fields">
+          <label>ID</label>
+          <input type="text" formControlName="buyerId" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.buyerId.errors  }" readonly/>
+            
+            <label>Name</label>
+            <input type="text" formControlName="userName" placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
+            
+          <label>Password</label>
+          <input type="password" formControlName="password" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+            
+          <label>Email</label>
+            <input type="text" formControlName="emailId" placeholder="Enter Email" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
+           
+            <label>Mobile</label>
+            <input type="text" formControlName="mobileNo" placeholder="Enter Mobile Number" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
+            
+          
+          </div>
+          <br><br>
+        <div class="text-center">
+         
+          <button class="ghost-round full-width" type="button" (click)="EditProfile()">EditProfile</button>
+     
+        </div>
+      </form>
+    </div>
+  </div>

@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Items } from 'src/app/Models/items';
 import { SellerService } from 'src/app/services/seller.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-view-items',
   templateUrl: './view-items.component.html',
   styleUrls: ['./view-items.component.css']
 })
 export class ViewItemsComponent implements OnInit {
-  SellerId: any;
-
   itemForm:FormGroup;
   submitted=false;
  item:Items;
@@ -17,7 +16,7 @@ export class ViewItemsComponent implements OnInit {
 //   categorylist:Category[];
 // subcategorylist:SubCategory[];
 //catid:string;
-  constructor(private fromBuilder:FormBuilder,private service: SellerService)
+  constructor(private fromBuilder:FormBuilder,private route:Router,private service: SellerService)
    {
     this.service.ViewItems().subscribe(res=>{
       this.itemlist=res;
@@ -41,39 +40,26 @@ export class ViewItemsComponent implements OnInit {
         StockNumber:['',Validators.required],
         Remarks:[''],
         SubcategoryId:[''],
+        image:['']
       
   
     });
   
   }
     
-//     SellerId:[''],
-      
-//       ItemName:[''],
-     
-   
-//      Price:[''],
-//       Description:[''],
-//       CategoryId:[''],
-//       CategoryName:[''],
-//       StockNumber:[''],
-//       Remarks:[''],
-//       SubcategoryId:['']
 
-    
-
-//   });
-
-// }
 DeleteItem(itemId:string)
 {
 
-  // let id=this.itemForm.value["itemId"];
+ 
   this.service.DeleteItem(itemId).subscribe
   (
     res=>
     {
       console.log('Record Deleted');
+      alert("Record Deleted");
+      this.route.navigateByUrl('/seller/view-items');
+      
     },
     err=>
     {
@@ -96,6 +82,7 @@ GetItem(itemid:string)
              
               ItemId:this.item.itemId,
               ItemName:this.item.itemName,
+              image:this.item.image,
               Price:this.item.price,
               Description:this.item.description,
               StockNumber:this.item.stockNumber,
@@ -118,7 +105,7 @@ GetItem(itemid:string)
  
  Edit()
   {
-        let item=new Items();
+    let item=new Items();
     console.log(item);
     
     item.itemId=this.itemForm.value["ItemId"];
@@ -126,16 +113,21 @@ GetItem(itemid:string)
     item.sellerId=this.itemForm.value["SellerId"];
     item.subcategoryId=this.itemForm.value["SubcategoryId"]
     item.itemName=this.itemForm.value["ItemName"];
-
+    item.image=this.itemForm.value["image"];
     item.price=this.itemForm.value["Price"];
     item.stockNumber=this.itemForm.value["StockNumber"];
      item.description=this.itemForm.value["Description"];
     item.remarks=this.itemForm.value["Remarks"];
-this.service.UpdateItem(item).subscribe(res=>{console.log('Record updated')})
+  this.service.UpdateItem(item).subscribe(res=>
+  {
+    console.log('Record updated')
+    alert("Record Updated");
+    this.route.navigateByUrl('/seller/view-items');
+  })
     console.log(this.item);
    }
 
-//console.log(this.item);
+
 
 
 }

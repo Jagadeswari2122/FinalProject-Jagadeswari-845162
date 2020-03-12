@@ -39,7 +39,7 @@ public ViewItems():Observable<Items[]>
   return this.http.delete<any>(this.url+'DeleteItem/'+itemid,Requestheaders);
 
 }
-public UpdateItem(item:Items):Observable<any>
+public UpdateItem(item:Items):Observable<Items>
 {
   return this.http.put<any>(this.url+'UpdateItem/',JSON.stringify(item),Requestheaders);
 }
@@ -54,7 +54,7 @@ public ViewProfile(id:string) : Observable<Seller>
 }
 public EditProfile(seller:Seller):Observable<any>
 {
-  return this.http.put<any>(this.url1+'EditProfile',JSON.stringify(seller),Requestheaders);
+  return this.http.post<any>(this.url1+'EditProfile',JSON.stringify(seller),Requestheaders);
 }
 
 }

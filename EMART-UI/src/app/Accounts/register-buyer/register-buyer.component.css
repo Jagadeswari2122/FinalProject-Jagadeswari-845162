@@ -1,0 +1,147 @@
+.register form {
+    border-color:cornflowerblue;
+      /* background: #456; */
+      font-family: 'Open Sans', sans-serif;
+      align-self: baseline;
+  }
+  
+  /* @import  url(https://fonts.googleapis.com/css?family=Open+Sans:400,700); */
+  .form-group {
+    padding-left: 9px;
+    padding-top: 9px;
+  }
+  #f1{
+align-content: center;
+
+border-radius: 10px 45px 45px 45px;
+  }
+  input[type=text], 
+  input[type=password] { 
+      width: 100%; 
+      padding: 0px 0px; 
+      margin: 2px 0; 
+      display: inline-block; 
+      border: 1px solid #ccc; 
+      box-sizing: border-box;
+      size: 120px; 
+  text-emphasis: size after 1px;;
+      /* border-radius: 40px; */
+  } 
+
+  .jumbotron{
+  
+    width : 300px;  
+  /*background-image: url("QAAAAAAAAAAAAAAAAAAEhH/2gAMAwEAAhEDEQA/APsYDi6ICggqAACgAAqAGlARQERQAAAAAFQAUBAAUBQABAEADQAAAAAAAAAigAAAAAAAAAAKAAAAABsFEAQCQAAABAVBQRQAAAIAAAAAAAFAAABFAAABUAeVRQRUUBFADQgKACKgCiAKgoEAgKAAAAQAAALsRQAAAAeQAUAEVFBBUBUVADQAAAAAAAKigAAAAAgKCgiiAoAPIqAqCggoCGwBUIAAAAAAAAAAAFQQARQAAAVABRAAQFRUABQQVAAAAAAAAAAAAAAABQEUAAAAUEUAQAAAEVFBBUACQAAARQAAAAAAFQBQACAAAAAAUAQABFAQUBAUBAAAAAAAAVFBBQEUAAAAAAAFRQEUBAAAAAAAAAAQAAAFQAAADYAAAAAKACoAKAAAIqAAAAAAAAACKAAAigAgoIogAKAIoAAAKCKAAKDybbOEe0fC8Y9o+G5ZpiGzhHtHwcI9o+CSmJW3jHtHwnCPaPgkpjG3jHtHwcY9o+CSmJDN4l09Ime8xXPXpbzWkzFbzOtb137xrs928Q6eKTfnWaxWLxxjc2iaTaNR/xiZJKeRzxeL9NaMk7tXy5pWeWK9ZtNqRaIiNd+0/w6fiXTatMZKzFOETNazaN3iJrHaO+4tE/5JKRXn8W6aJzxa01/02avT35Y7RE2nFF+3bv9M7n209ZvEunrvvFuGXDhvxruKTkvWK7t9v74n7/YkoHS/V4a0x5JtHDNMRhmKzM5e39sRG57Rt4t4j00eZE5KR5NeWTcT2jcRPp31Noif3JKQe+l63p80zXHatpiJtMcZjtE6n7x6T2l2x5cVrZaVtS1sExXPWs1m2KZjtFo9OxJTMOFvGcXDrL1xZb16DNXDlmtccc4mInzK8rRusb/AI7bd8vX46569PGO98lunydT9FacY46+iZmY7zy7fzokoGb8axRjjJbDlrz678OrTjitebc4rNvptMcYtOpnfp+xHjeGbdbSuLJe/h9Ml8ta+TyvFLanUTft7xy1uO8bJKaRzv4rhi+Kvl3mMuPBkveK04YPNtMY4t333tGu0T+rt0XV1zTnr5V8V+ltWuWmSMczHKu4ndZmPt+pJTyNnCPaPheMe0fBJTGNfGPaPg4R7R8ElMg18I9o+F4x7R8ElMatfGPaPg4x7R8EmqA2yAAAAAA/Pp4TjjJky8rzbLmpnmPorWs1mddq1jf3+87n9XmPBcUTi+rLxxREcOVeOTWOaxM9t/03n19gB4yeBYrREWyZbTW1MtZtGG3HJWnHnqaan6Pp+2vXW+7rfwnHOPPj5WiOpyUzZJ44rTuuOtY1FqzWO1I9P20AOdvBMfeYy5qzNq3iYtSbVmMMUmdzWZndIiJ37bjUrk8EwWplxWm84M98WXJgmazjm1LVmJ7xy/243G9fcAdbeGxNcMedm5dNeMnS5OVLXwTxmvrWYt9NpjvE/Pd4/B8XK1ptknlNr1rNq8cdrZK2vMdvW1In/wA0AO2DoMeO9cleXKkdREbnt+dl53/7R2e8PRYcd+pyUxY6ZOutW/WXrWIt1E1rqJtPrqOygMU+BYIp1WPFzwV63hXN5XDtWtdRWsWiYiNQ7R4VhjNi6jU+diraJydonLa1YibWiI1M6rCgOWXwTpr48OK1JmOm15d9/mR+ZFp7/rasTKfguOPOmMmaPNpmx070n/Txlvyycd177mPXevTQAtfB8e8Mzky2nDTDjvuaRHUeVaZxzaIrH9Mzvtr9du/h3Qx09b1jLky87zlmcvl8uU/eZmtY3/naANgAAAAAAAP/2Q==");
+      position: fixed;*/
+  
+      background-image: url("src\assets\image\pinkbg.jpg");
+      position:fixed;
+    background-size: cover;
+    height:450px;
+   position:relative;
+     
+  }
+  .register {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+  }
+  
+  .register-header,
+  .loregistergin p {
+    margin-top: 1;
+    margin-bottom: 1;
+  }
+  
+  .register-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: rgb(15, 66, 107);
+  }
+  /* .jumbotron{
+   width : 400px;
+} */
+h1{
+  color: blue;
+  font-style: italic;
+}
+  .register-header {
+    background: cornflowerblue;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .register-container {
+    background: #ebebeb;
+    padding: 12px;
+  }
+  
+  .register p {
+    padding: 12px;
+  }
+  
+  .register input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+    text-align: left;
+  }
+  
+  .register input[type="text"],
+  .register input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+    width:90%;
+   padding-right: 12%;
+   
+  
+  }
+  /* .jumbotron{
+   
+    width:400px;
+} */
+  
+  /* .login input[type="text"]:focus,
+  .login input[type="password"]:focus {
+    border-color: #888;
+    width:"20%";
+  } */
+  
+  #a {
+    background:cornflowerblue;
+    border-color: transparent;
+    /* color: #fff; */
+    cursor: pointer;
+  }
+
+
+
+
+
+/* #b1
+{
+  background-image: url("src\assets\image\rg.jpg");
+} */
+
+
+
+
+
+
+
+
+
+

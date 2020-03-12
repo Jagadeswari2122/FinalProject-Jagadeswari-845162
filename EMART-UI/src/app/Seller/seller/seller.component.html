@@ -1,12 +1,14 @@
+<div class="bg1">
+
 <div class="row">
   <div class="col-lg-12">
     <div class="topnav">
-        <a class="active" [routerLink]="['/home']"><span class="glyphicon glyphicon-home"></span>Home</a>
-        <a [routerLink]="['view-seller-profile']" ><span class="glyphicon glyphicon-user"></span>ViewProfile</a>
+        <a class="active" [routerLink]="['/home']" class="font-weight-bold"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+        <a [routerLink]="['view-seller-profile']"  class="font-weight-bold"><span class="glyphicon glyphicon-user"></span>ViewProfile</a>
     
-        <a [routerLink]="['/seller/add-items']" ><span class="glyphicon glyphicon-folder-open"></span> Add Items</a>
-        <a [routerLink]="['/seller/view-items']"><span class="glyphicon glyphicon-search"> </span>  View Items </a>
-        <a (click)="Logout()" id="r" >LogOut</a>
+        <a [routerLink]="['/seller/add-items']"  class="font-weight-bold"><span class="glyphicon glyphicon-folder-open"></span> Add Items</a>
+        <a [routerLink]="['/seller/view-items']" class="font-weight-bold"><span class="glyphicon glyphicon-search"> </span>  View Items </a>
+        <a (click)="Logout()" id="r" class="font-weight-bold"><span class="glyphicon glyphicon-user"></span>&nbsp;LogOut</a>
         
        </div>
     </div>
@@ -32,4 +34,5 @@
   
 
 
+</div>
 </div>

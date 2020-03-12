@@ -182,11 +182,11 @@ h4{
 }
 
 .b1{
- background-image: url("https://downloader.la/temp/5e6389eadc324.png");  
+ background-image: url("src\assets\image\lady.jpg");  
  /* backgroundimGE */
  background-size: cover;
  background-attachment: fixed;
- height:800px;
+ height:1000px;
  position: relative;
 
 

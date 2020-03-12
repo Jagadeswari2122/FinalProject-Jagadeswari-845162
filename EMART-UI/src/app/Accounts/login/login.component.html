@@ -18,25 +18,30 @@
               <div *ngIf="f.password.errors.required">Password is required</div>
           </div>
       </div>
-      <div class="form-group">
-      <a class="font-weight-bold"> Buyer</a>   <input type="radio" formControlName="role"  value="buyer" name="role"/>&nbsp;&nbsp;
-      <a class="font-weight-bold">Seller</a>    <input type="radio" formControlName="role"  value="seller" name="role"/>
-
-      </div>
+      <!-- <div class="form-group">
+        Buyer <input type="radio" formControlName="role" value="buyer" name="role">&nbsp;
+     Seller <input type="radio" formControlName="role" value="seller" name="role">&nbsp;
+     </div>
   <div class="text-center">
 
       <button  type="submit" (click)="onSubmit()" id=b2>Login</button>
       <button  type="reset" (click)="onReset()" id=b2>Reset</button>
-     
-
-      
-  </div>
+    </div> -->
+  
+    <div class="form-group">
+        <label for="role"><input type="radio" formControlName="role" value="buyer">Buyer</label><br>
+        <label for="role"><input type="radio" formControlName="role" value="seller">Seller</label><br>
+    </div>
+    <div class="row">        
+        &nbsp; &nbsp;&nbsp;&nbsp; <button class="btn btn-primary col-sm-4 " (click)="Login()">Login</button>&nbsp;&nbsp;
+        <button class="btn btn-secondary col-sm-4" type="reset" (click)="onReset()">Cancel</button>
+    </div>
 
 
   <div class="text-center"> 
-      <a [routerLink]="['/registerbuyer']" >Register Buyer/</a>
-         &nbsp;&nbsp;
-      <a [routerLink]="['/registerseller']">Register Seller</a>
+      <a [routerLink]="['/home/register-buyer']" class="font-weight-bold" >Register Buyer/</a>
+      
+      <a [routerLink]="['/home/register-seller']" class="font-weight-bold">Register Seller</a>
 </div>
   </form>
 </div>

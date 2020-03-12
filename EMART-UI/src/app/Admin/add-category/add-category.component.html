@@ -2,6 +2,7 @@
 <div  class="jumbotron" >
 
     <h4>Add Categories </h4>
+    <br>
   <form [formGroup]="addcatForm" (ngSubmit)="onSubmit()">
       
 
@@ -27,9 +28,9 @@
 
   <div class="text-center">
 
-      <button  type="submit">Add</button>
-      &nbsp;&nbsp;
-      <button  type="reset" (click)="onReset()" >Reset</button>
+      <button  type="submit" class="btn btn-success col-sm-4" >Add</button>&nbsp;&nbsp; 
+    
+   &nbsp;&nbsp;<button  type="reset" class="btn btn-secondary col-sm-4" (click)="onReset()" >Reset</button>
       
   </div>
 

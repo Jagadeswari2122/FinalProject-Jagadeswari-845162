@@ -94,7 +94,7 @@ EditProfile()
 {
   this.seller=new Seller();
   console.log(this.seller);
-  this.seller.sellerId=localStorage.getItem('sellerid');
+  this.seller.sellerId=localStorage.getItem('sellerId');
   this.seller.userName=this.itemForm.value["userName"];
   this.seller.password=this.itemForm.value["password"];
   this.seller.emailId=this.itemForm.value["emailId"];

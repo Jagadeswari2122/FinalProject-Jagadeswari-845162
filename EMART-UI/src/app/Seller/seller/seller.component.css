@@ -8,7 +8,7 @@ body {
 
 .topnav {
   overflow:hidden;
-  background-color: #e9e9e9;
+  background-color: transparent;
 }
 
 .topnav a {
@@ -78,7 +78,26 @@ body {
     float: right;
 }
 
+.jumbotron{
+  width : 350px;
+  /* background-image: url("src\assets\image\grey bg.jpg"); */
+  position:relative;
+  background-size: cover;
+  
+}
 
+
+.bg1 {
+   
+  
+  background-attachment: fixed;
+  background-size: cover; 
+ height:1300px;
+position:relative;
+background-image:url("src\assets\image\seller.jpg")
+} 
+  
+/* 
 .sidenav a {
   
         float: left;
@@ -89,8 +108,8 @@ body {
         text-decoration: none;
         font-size: 17px;
       
-}
-.sidenav input[type=text] {
+} */
+/* .sidenav input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
@@ -118,9 +137,9 @@ body {
   }
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
+  /* @media screen and (max-width: 400px) {
     .sidenav a {
       text-align: center;
       float: none;
     }
-  }
+  } */ 
