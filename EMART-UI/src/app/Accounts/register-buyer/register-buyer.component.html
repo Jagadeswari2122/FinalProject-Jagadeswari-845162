@@ -25,7 +25,7 @@
                     <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
                     <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
                         <div *ngIf="f.UserName.errors.required"> Name is required</div>
-                        <div *ngIf="f.UserName.errors.pattern">Enter only uppercase</div>
+                        <div *ngIf="f.UserName.errors.pattern">Enter atleast 4 letter name </div>
                     </div>
                 </div>
      

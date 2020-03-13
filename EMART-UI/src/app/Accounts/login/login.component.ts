@@ -73,7 +73,7 @@ if(role=='seller')
     console.log(this.token);
     console.log(this.token.sellerId);
       localStorage.setItem('token',this.token.token);
-    localStorage.setItem('sellerId',this.token.sellerId);
+    localStorage.setItem('sellerid',this.token.sellerId);
 
   if(this.token.msg=='success'){
     this.route.navigateByUrl('/seller')

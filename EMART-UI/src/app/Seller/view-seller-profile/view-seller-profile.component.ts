@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Seller } from 'src/app/Models/seller';
 import { SellerService } from 'src/app/services/seller.service';
 //import { CONNREFUSED } from 'dns';
@@ -11,65 +11,50 @@ import { SellerService } from 'src/app/services/seller.service';
 })
 export class ViewSellerProfileComponent implements OnInit {
 
- 
-  itemForm:FormGroup;
+  viewprofileForm:FormGroup;
   submitted=false;
-seller:Seller;
- sellerlist:Seller[];
-  constructor(private fromBuilder:FormBuilder,private service: SellerService) {
-    let sid= localStorage.getItem('sellerId')
-    console.log(sid);
- this.service.ViewProfile(sid).subscribe(res=>
-  {
-    this.seller=res;
-    console.log("get");
-    console.log(this.seller);
-    console.log('Id Found');
-    //console.log(res);
-    this.itemForm.patchValue(
-      {
-       
-      sellerId:localStorage.getItem('sellerId'),
-      userName:this.seller.userName,
-        password:this.seller.password,
-      companyName:this.seller.companyName,
-        gstin:this.seller.gstin,
-        briefDetails:this.seller.briefDetails,
-        postalAddress:this.seller.postalAddress,
-        website:this.seller.website,
-        emailId:this.seller.emailId,
-        mobileNo:this.seller.mobileNo
-        
-      }
-    )
-  },
-  err=>
-  {
-    console.log(err);
+item:Seller;
+itemlist:Seller[];
+  seller: Seller;
+  constructor(private formbuilder:FormBuilder,private service:SellerService) { 
+    
+  let id1=localStorage.getItem('sellerid');
+  console.log(id1);
+  this.service.ViewProfile(id1).subscribe(res=>{
+    this.item=res;
+    console.log(this.item);
+    this.viewprofileForm.patchValue({
+      sellerId:this.item.sellerId,
+      userName:this.item.userName,
+      password:this.item.password,
+      companyName:this.item.companyName,
+      gstin:this.item.gstin,
+      briefDetails:this.item.briefDetails,
+      postalAddress:this.item.postalAddress,
+      emailId:this.item.emailId,  
+      mobileNo:this.item.mobileNo,
+      website:this.item.website
+    })
+  })
   }
-)
-
-   
-
-   }
 
   ngOnInit() {
-   
-    this.itemForm=this.fromBuilder.group({
-        sellerId:[''],
-        userName:[''],
-      password:[''],
-      briefDetails:[''],
-      companyName:[''],
-      gstin:[''],
-      postalAddress:[''],
-      emailId:[''],
-      mobileNo:[''],
-      website:['']
+    this.viewprofileForm=this.formbuilder.group({
+       sellerId:['',Validators.required],
+       userName:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,6}$')]], 
+       companyName:[''],
+       gstin:[''],
+       briefDetails:[''],
+       postalAddress:[''],
+       mobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
+       emailId:['',[Validators.required,Validators.email]],
+       website:[''],
+       password:['',[Validators.required,Validators.minLength(6)]],
+      //  createdDateTime:['']
+     
 
     });
   }
-
   onSubmit()
   {
     this.submitted=true;
@@ -77,35 +62,27 @@ seller:Seller;
 }
 get f()
 {
-  return this.itemForm.controls;
+  return this.viewprofileForm.controls;
 }
 onReset()
 {
 this.submitted=false;
-this.itemForm.reset();
+this.viewprofileForm.reset();
 }
-
-
-
-
-
-
 EditProfile()
 {
   this.seller=new Seller();
   console.log(this.seller);
-  this.seller.sellerId=localStorage.getItem('sellerId');
-  this.seller.userName=this.itemForm.value["userName"];
-  this.seller.password=this.itemForm.value["password"];
-  this.seller.emailId=this.itemForm.value["emailId"];
-  this.seller.mobileNo=this.itemForm.value["mobileNo"];
-  this.seller.companyName=this.itemForm.value["companyName"];
-  this.seller.gstin=this.itemForm.value["gstin"];
-  this.seller.briefDetails=this.itemForm.value["briefDetails"];
-  this.seller.postalAddress=this.itemForm.value["postalAddress"];
-  this.seller.website=this.itemForm.value["website"];
-// this.item.createdDateTime=this.itemForm.value["createdDateTime"];
-
+  this.seller.sellerId=localStorage.getItem('sellerid');
+  this.seller.userName=this.viewprofileForm.value["userName"];
+  this.seller.password=this.viewprofileForm.value["password"];
+  this.seller.emailId=this.viewprofileForm.value["emailId"];
+  this.seller.mobileNo=this.viewprofileForm.value["mobileNo"];
+  this.seller.companyName=this.viewprofileForm.value["companyName"];
+  this.seller.gstin=this.viewprofileForm.value["gstin"];
+  this.seller.briefDetails=this.viewprofileForm.value["briefDetails"];
+  this.seller.postalAddress=this.viewprofileForm.value["postalAddress"];
+  this.seller.website=this.viewprofileForm.value["website"];
   console.log(this.seller);
   this.service.EditProfile(this.seller).subscribe(res=>
     {

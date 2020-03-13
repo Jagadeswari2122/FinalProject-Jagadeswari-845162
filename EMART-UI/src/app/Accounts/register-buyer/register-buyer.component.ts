@@ -22,10 +22,10 @@ export class RegisterBuyerComponent implements OnInit {
     this.registerForm=this.fromBuilder.group({
      
       // BuyerId:['',[Validators.required,Validators.maxLength(5)]],
-      UserName:['',[Validators.required,Validators.pattern('^[a-zA-Z][0-9]{3,15}$')]],
-      MobileNo:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
+      UserName:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,15}$')]],
+      MobileNo:['',[Validators.required,Validators.pattern("^[3-9][0-9]{9}$")]],
       EmailId:['',[Validators.required,Validators.email]],
-      Password:['',[Validators.required,Validators.minLength(6)]],
+      Password:['',[Validators.required]],
 
     
     });

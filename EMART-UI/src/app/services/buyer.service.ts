@@ -30,7 +30,7 @@ export class BuyerService {
   
   public EditProfile(buyer:Buyer):Observable<any>
   {
-    return this.http.post<any>(this.url+'EditProfile',Requestheaders);
+    return this.http.put<any>(this.url+'EditProfile',Requestheaders);
   }
   public ViewProfile(id:string) : Observable<Buyer>
    {

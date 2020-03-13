@@ -1,0 +1,7 @@
+.jumbotron{
+    width : 300px;
+    background-image: url("src\assets\image\white.jpg");
+    position:relative;
+    background-size: cover;
+    
+  }
