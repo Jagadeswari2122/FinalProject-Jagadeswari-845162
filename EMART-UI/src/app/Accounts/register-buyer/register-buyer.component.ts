@@ -13,7 +13,7 @@ export class RegisterBuyerComponent implements OnInit {
   submitted=false;
   buyer:Buyer;
   buyerlist:Buyer[];
-  constructor(private fromBuilder:FormBuilder,private service: AccountService) { }
+  constructor(private fromBuilder:FormBuilder,private service:AccountService) { }
 
 
 
